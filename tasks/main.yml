@@ -48,6 +48,7 @@
     - timeshift
     - remmina
     - remmina-plugin-rdp
+    - gparted
     state: latest
 
 - name: Upgrade all apt packages
