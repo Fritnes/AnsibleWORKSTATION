@@ -1,7 +1,14 @@
 ---
 # tasks file for workstation
 
-- name: Add repositorys from PPA and install its signing key
+- name: Add an Apt signing key
+  ansible.builtin.apt_key:
+    url: "{{ item }}"
+    state: present
+  loop:
+    - "https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg"
+
+- name: Add repositorys
   apt_repository:
     repo: "{{ item }}"
   loop:
@@ -11,6 +18,7 @@
     - "ppa:libreoffice/ppa"
     - "ppa:teejee2008/ppa"
     - "ppa:remmina-ppa-team/remmina-next"
+    - "deb http://repository.spotify.com stable non-free"
 
 - name: Update apt-get repo and cache
   apt: 
@@ -49,6 +57,7 @@
     - remmina
     - remmina-plugin-rdp
     - gparted
+    - spotify-client
     state: latest
 
 - name: Upgrade all apt packages
