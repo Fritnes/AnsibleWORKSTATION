@@ -27,7 +27,12 @@
     update_cache: yes 
     force_apt_get: yes 
     cache_valid_time: 3600
-      
+
+- name: copy apt preferences
+  copy:
+    src: mozilla-firefox
+    dst: /etc/apt/preferences.d/mozilla-firefox
+
 - name: Install useful packages
   apt:
     name:
