@@ -31,7 +31,7 @@
 - name: copy apt preferences
   copy:
     src: mozilla-firefox
-    dst: /etc/apt/preferences.d/mozilla-firefox
+    dest: /etc/apt/preferences.d/mozilla-firefox
 
 - name: Install useful packages
   apt:
