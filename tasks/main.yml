@@ -30,6 +30,7 @@
 - name: Install useful packages
   apt:
     name:
+    - firefox
     - synaptic
     - elisa
     - drawing
