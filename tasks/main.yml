@@ -19,6 +19,7 @@
     - "ppa:teejee2008/ppa"
     - "ppa:remmina-ppa-team/remmina-next"
     - "deb http://repository.spotify.com stable non-free"
+   ignore_errors: yes
 
 - name: Update apt-get repo and cache
   apt: 
@@ -59,6 +60,7 @@
     - gparted
     - spotify-client
     state: latest
+  ignore_errors: yes
 
 - name: Upgrade all apt packages
   apt: 
